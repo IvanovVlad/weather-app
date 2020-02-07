@@ -1,0 +1,66 @@
+@media (max-width: 945px) {
+    .wrapper {
+        grid-template-areas:
+            "controls controls controls"
+            "weather weather weather"
+            "forecast forecast forecast"
+            "location location location";
+    }
+
+    .forecast {
+        margin-top: 50px;
+        grid-gap: 20px;
+    }
+
+    .map {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 545px) {
+    .font-px300 {
+        font-size: 250px;
+    }
+
+    .controls {
+        grid-auto-flow: row;
+        justify-content: center;
+        grid-gap: 15px;
+
+        &-buttons {
+            justify-content: space-evenly;
+        }
+    }
+
+    .forecast {
+        grid-auto-flow: row;
+    }
+
+    .weather {
+        &-dateinfo {
+            display: block;
+            text-align: center;
+        }
+
+        &-description {
+            display: block;
+            text-align: center;
+
+            .now {
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .font-px300 {
+        font-size: 175px;
+    }
+    
+    .controls-search__input {
+        width: 140px;
+    }
+}
