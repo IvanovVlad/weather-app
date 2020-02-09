@@ -1,6 +1,7 @@
 import { WeatherApi } from './WeatherApi';
 import { WeatherData } from './WeatherData';
 import { renderMap } from './mapApi';
+import { renderImage } from './imageApi';
 import * as countriesShorts from './countries.json';
 
 export function renderPage(city) {
@@ -27,6 +28,8 @@ export function renderPage(city) {
             document.querySelector('#environment-now').innerText = weatherData.weather.description;
             document.querySelector('#wind-now').innerText = weatherData.weather.windSpeed + ' m/s';
             document.querySelector('#humidity-now').innerText = weatherData.weather.humidity + '%';
+            
+            window.weatherDescription = weatherData.weather.description;
         }
     
         function setTimeLocation(weatherData) {
@@ -60,6 +63,8 @@ export function renderPage(city) {
         setWeatherNow(weatherData);
         setTimeLocation(weatherData);
         setGeoLocation(weatherData);
+        
+        renderImage();
     }
     
     function renderForecast(weatherDataArray) {
