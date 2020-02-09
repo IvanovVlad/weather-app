@@ -19,10 +19,10 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 
 function renderCurrentWeather(weatherData) {
     function setWeatherNow(weatherData) {
-        document.querySelector('#weather-now').innerText = weatherData.weather.temp + '°';
+        document.querySelector('#weather-now').innerText = weatherData.weather.temp;
         document.querySelector('.weather__icon').src =
             `https://www.weatherbit.io/static/img/icons/${weatherData.icon}.png`;
-        document.querySelector('#feels-now').innerText = weatherData.weather.feelsTemp + '°';
+        document.querySelector('#feels-now').innerText = weatherData.weather.feelsTemp;
         document.querySelector('#environment-now').innerText = weatherData.weather.description;
         document.querySelector('#wind-now').innerText = weatherData.weather.windSpeed + ' m/s';
         document.querySelector('#humidity-now').innerText = weatherData.weather.humidity + '%';
@@ -72,9 +72,8 @@ function renderForecast(weatherDataArray) {
     wdArray.forEach((wd, index) => {
         const date = new Date(wd.date);
         tileNodes[index].firstElementChild.innerText = days[date.getDay()];
-        tileNodes[index].firstElementChild.nextElementSibling.innerText = wd.weather.temp + '°';
+        tileNodes[index].firstElementChild.nextElementSibling.innerText = wd.weather.temp;
         tileNodes[index].querySelector('img').src =
             `https://www.weatherbit.io/static/img/icons/${wd.icon}.png`;
     })
-
 }

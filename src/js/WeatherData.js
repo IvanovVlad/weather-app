@@ -7,8 +7,8 @@ export class WeatherData {
         this.location.country = data.country_code;
         this.weather = {}
         this.weather.description = data.weather.description;
-        this.weather.temp = Math.round(data.temp);
-        this.weather.feelsTemp = Math.round(data.app_temp);
+        this.weather.temp = Math.round(data.temp) + '°';
+        this.weather.feelsTemp = Math.round(data.app_temp) + '°';
         this.weather.humidity = data.rh;
         this.weather.windSpeed = data.wind_spd;
         this.setDateTime(data.ob_time, data.datetime)
