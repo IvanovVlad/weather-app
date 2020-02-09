@@ -37,19 +37,18 @@
     }
 
     .weather {
-        &-dateinfo {
+        &__dateinfo {
             display: block;
             text-align: center;
         }
 
-        &-description {
+        &__description {
             display: block;
             text-align: center;
-
-            .now {
-                img {
-                    display: none;
-                }
+        }
+        &__now {
+            img {
+                display: none;
             }
         }
     }
@@ -59,8 +58,8 @@
     .font-px300 {
         font-size: 175px;
     }
-    
-    .controls-search__input {
+
+    #search-field {
         width: 140px;
     }
 }
