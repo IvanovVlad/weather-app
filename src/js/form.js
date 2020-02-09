@@ -1,7 +1,7 @@
 import { renderPage, setGeoLocation, setTimeLocation } from './renderWeatherData';
-import { languageRenderForecast, languageSetWeatherNow, translateSelect} from './translateNodes';
+import { languageRenderForecast, languageSetWeatherNow, translateSelect, translateSearch } from './translateNodes';
 import { getLocation } from './location';
-import { renderImage } from './imageApi';
+import { renderImage } from './API/imageApi';
 
 document.querySelector('#search-button').onclick =
     () => renderPage(document.querySelector('#search-field').value);
@@ -24,6 +24,7 @@ document.querySelector('#language').onchange = (e) => {
         languageSetWeatherNow(_weatherData);
         setTimeLocation(_weatherData);
         translateSelect();
+        translateSearch();
     }
 
     switch (e.target.selectedIndex) {

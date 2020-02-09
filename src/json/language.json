@@ -16,6 +16,18 @@
             "option3": "БЕЛ"
         }
     },
+    "search": {
+        "placeholder": {
+            "ru": "Название города",
+            "en": "Search city",
+            "be": "Назва горада"
+        },
+        "button": {
+            "ru": "Поиск",
+            "en": "Search",
+            "be": "Пошук"
+        }
+    },
     "month": {
         "ru": [
             "Января",

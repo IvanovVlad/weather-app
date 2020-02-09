@@ -1,4 +1,6 @@
-import { translate } from './translateApi';
+import { translate } from './API/translateApi';
+import * as language from '../json/language.json';
+import * as countriesShorts from '../json/countries.json';
 
 export function languageRenderForecast(wdArray) {
     const tileNodes = document.querySelectorAll('.forecast .weather-tile');
@@ -28,4 +30,9 @@ export function translateSelect() {
     document.querySelectorAll('#language option').forEach((op, index) => {
         op.innerText = language.options[_currentLanguage][`option${index+1}`];
     });
+}
+
+export function translateSearch() {
+    document.querySelector('#search-field').placeholder = language.search.placeholder[_currentLanguage];
+    document.querySelector('#search-button').innerText = language.search.button[_currentLanguage];
 }

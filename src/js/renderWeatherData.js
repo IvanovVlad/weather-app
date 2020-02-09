@@ -1,10 +1,10 @@
-import { WeatherApi } from './WeatherApi';
+import { WeatherApi } from './API/WeatherApi';
 import { WeatherData } from './WeatherData';
-import { renderMap } from './mapApi';
-import { renderImage } from './imageApi';
-import { translate } from './translateApi';
-import * as countriesShorts from './countries.json';
-import * as language from './language.json';
+import { renderMap } from './API/mapApi';
+import { renderImage } from './API/imageApi';
+import { translate } from './API/translateApi';
+import * as countriesShorts from '../json/countries.json';
+import * as language from '../json/language.json';
 
 export function renderPage(city) {
     if (city === '') { return }
