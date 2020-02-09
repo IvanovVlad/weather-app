@@ -1,7 +1,6 @@
 const selector = document.querySelector('#units-selector');
-let units = 'c';
 
-selector.addEventListener('change', changeLanguage);
+selector.addEventListener('change', changeUnits);
 
 function toFahrenheit(celsius) {
     return Math.round(parseInt(celsius) * 9 / 5 + 32) + 'F';
@@ -11,8 +10,8 @@ function toCelsius(fahrenheit) {
     return Math.round((parseInt(fahrenheit) - 32) * 5 / 9) + '°';
 }
 
-function changeLanguage() {
-    if (units === 'c') {
+function changeUnits() {
+    if (_units === 'c') {
         document.querySelector('#weather-now').innerText =
             toFahrenheit(document.querySelector('#weather-now').innerText);
         document.querySelector('#feels-now').innerText =
@@ -25,8 +24,8 @@ function changeLanguage() {
                 toFahrenheit(node.firstElementChild.nextElementSibling.innerText);
         });
 
-        units = 'f';
-    } else if (units === 'f') {
+        _units = 'f';
+    } else if (_units === 'f') {
         document.querySelector('#weather-now').innerText =
             toCelsius(document.querySelector('#weather-now').innerText);
         document.querySelector('#feels-now').innerText =
@@ -39,6 +38,6 @@ function changeLanguage() {
                 toCelsius(node.firstElementChild.nextElementSibling.innerText);
         });
 
-        units = 'c';
+        _units = 'c';
     }
 }

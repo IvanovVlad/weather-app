@@ -24,7 +24,8 @@ export function renderPage(city) {
 }
 
 function setWeatherNow(weatherData) {
-    document.querySelector('#weather-now').innerText = weatherData.weather.temp;
+    document.querySelector('#weather-now').innerText =
+        _units === 'c' ? weatherData.weather.temp : Math.round(parseInt(weatherData.weather.temp) * 9 / 5 + 32) + 'F';
     document.querySelector('.weather__icon').src =
         `https://www.weatherbit.io/static/img/icons/${weatherData.icon}.png`;
     document.querySelector('#feels-now').innerText = weatherData.weather.feelsTemp;
@@ -88,7 +89,8 @@ function renderForecast(weatherDataArray) {
             const date = new Date(wd.date);
             tileNodes[index].firstElementChild.innerText =
                 language.day[_currentLanguage][date.getDay()];
-            tileNodes[index].firstElementChild.nextElementSibling.innerText = wd.weather.temp;
+            tileNodes[index].firstElementChild.nextElementSibling.innerText =
+                _units === 'c' ? wd.weather.temp : Math.round(parseInt(wd.weather.temp) * 9 / 5 + 32) + 'F';
             tileNodes[index].querySelector('img').src =
                 `https://www.weatherbit.io/static/img/icons/${wd.icon}.png`;
         })
