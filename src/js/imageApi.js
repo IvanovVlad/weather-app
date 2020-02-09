@@ -18,7 +18,7 @@ export function renderImage() {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
-    getImage(weatherDescription).then(img => {
+    getImage(_weatherDescription).then(img => {
         const image = new Image();
         const photoJSON = img.photos[getRandomInt(20)];
         image.src = photoJSON.src.landscape;

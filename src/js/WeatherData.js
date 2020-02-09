@@ -11,6 +11,7 @@ export class WeatherData {
         this.weather.feelsTemp = Math.round(data.app_temp) + '°';
         this.weather.humidity = data.rh;
         this.weather.windSpeed = data.wind_spd;
+        this.weather.code = data.weather.code;
         this.setDateTime(data.ob_time, data.datetime)
         this.icon = data.weather.icon;
     }

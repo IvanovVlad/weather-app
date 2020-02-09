@@ -2,7 +2,12 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
 const SpeechRecognitionEvent = window.SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent;
 
 const recognition = new SpeechRecognition();
-recognition.lang = 'en-US';
+if (window.currentLanguage === 'en') {
+    recognition.lang = 'en-US';
+} else {
+    recognition.lang = 'ru-RU'
+}
+
 recognition.continuous = true;
 recognition.interimResults = true;
 
