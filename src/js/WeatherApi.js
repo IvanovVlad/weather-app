@@ -11,7 +11,7 @@ export class WeatherApi {
             const data = json.data[0];
             return data;
         } catch (e) {
-            alert(e);
+            alert('Incorrect input or city does not exist');
         }
     }
 
@@ -22,7 +22,7 @@ export class WeatherApi {
             const json = await response.json();
             return json.data;
         } catch (e) {
-            alert(e);
+            alert('Incorrect input or city does not exist');
         }
     }
 }
