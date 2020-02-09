@@ -1,3 +1,5 @@
+import { hidePreloader } from '../preloader';
+
 const imageAPIKey = '563492ad6f91700001000001e5099a744d6d4faba7664ce972e647cb';
 
 function getImage(keyWords) {
@@ -26,6 +28,7 @@ export function renderImage() {
             const background = document.querySelector('.background');
             background.style.backgroundImage = `url('${this.src}')`;
             background.innerText = "@" + photoJSON.photographer;
+            hidePreloader();
         };
     });
 }
