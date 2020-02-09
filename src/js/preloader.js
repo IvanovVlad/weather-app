@@ -4,6 +4,10 @@ preloader.id = 'preloader';
 
 document.body.appendChild(preloader)
 
-export function hidePreloader(){
+export function hidePreloader() {
     preloader.className = 'hidden';
 };
+
+export function showPreloader() {
+    preloader.className = 'visible';
+ }

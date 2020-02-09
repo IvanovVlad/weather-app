@@ -3,6 +3,7 @@ import { WeatherData } from './WeatherData';
 import { renderMap } from './API/mapApi';
 import { renderImage } from './API/imageApi';
 import { translate } from './API/translateApi';
+import { showPreloader } from './preloader';
 import * as countriesShorts from '../json/countries.json';
 import * as language from '../json/language.json';
 
@@ -68,6 +69,7 @@ export function setGeoLocation(weatherData) {
 }
 
 export function renderCurrentWeather(weatherData) {
+    showPreloader();
     setWeatherNow(weatherData);
     setTimeLocation(weatherData);
     setGeoLocation(weatherData);
