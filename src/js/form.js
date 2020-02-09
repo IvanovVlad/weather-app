@@ -1,4 +1,5 @@
-import { renderPage, languageRenderForecast, setGeoLocation, languageSetWeatherNow, setTimeLocation, translateSelect } from './renderWeatherData';
+import { renderPage, setGeoLocation, setTimeLocation } from './renderWeatherData';
+import { languageRenderForecast, languageSetWeatherNow, translateSelect} from './translateNodes';
 import { getLocation } from './location';
 import { renderImage } from './imageApi';
 
@@ -16,30 +17,24 @@ getLocation().then(loc => renderPage(loc));
 document.querySelector('#refresh').onclick = renderImage;
 
 document.querySelector('#language').onchange = (e) => {
+    function renderPage(lang) {
+        _currentLanguage = lang;
+        languageRenderForecast(_weatherDataArray);
+        setGeoLocation(_weatherData);
+        languageSetWeatherNow(_weatherData);
+        setTimeLocation(_weatherData);
+        translateSelect();
+    }
+
     switch (e.target.selectedIndex) {
         case 0:
-            _currentLanguage = 'en';
-            languageRenderForecast(_weatherDataArray);
-            setGeoLocation(_weatherData);
-            languageSetWeatherNow(_weatherData);
-            setTimeLocation(_weatherData);
-            translateSelect();
+            renderPage('en');
             break;
         case 1:
-            _currentLanguage = 'ru';
-            languageRenderForecast(_weatherDataArray);
-            setGeoLocation(_weatherData);
-            languageSetWeatherNow(_weatherData);
-            setTimeLocation(_weatherData);
-            translateSelect();
+            renderPage('ru');
             break;
         case 2:
-            _currentLanguage = 'be';
-            languageRenderForecast(_weatherDataArray);
-            setGeoLocation(_weatherData);
-            languageSetWeatherNow(_weatherData);
-            setTimeLocation(_weatherData);
-            translateSelect();
+            renderPage('be');
             break;
     }
 };
