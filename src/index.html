@@ -17,66 +17,66 @@
     
     <div class="wrapper">
         <div class="controls">
-            <div class="controls-buttons">
-                <div id="refresh" class="refresh font-montserrat-normal font-px14">⟳</div>
-                <div class="language-select">
+            <div class="controls__buttons">
+                <div id="refresh" class="controls__refresh font-montserrat-normal font-px14">⟳</div>
+                <div class="controls__language-select">
                     <select class="font-montserrat-normal font-px14" name="language">
                         <option value="en">EN</option>
                         <option value="ru">RU</option>
                         <option value="be">BE</option>
                     </select>
                 </div>
-                <div class="units">
+                <div class="controls__units">
                     <select id="units-selector" name="language" class="font-montserrat-normal font-px14" >
                         <option value="celsius">°C</option>
                         <option value="fahrenheit">°F</option>
                     </select>
                 </div>
             </div>
-            <div class="controls-search">
-                <button id="voice" class="controls-search__mic font-montserrat-normal font-px14">&#x1f3a4;</button>
-                <input id="search-field" class="controls-search__input font-montserrat-light font-px14" type="text" value="Search city">
-                <button id="search-button" class="controls-search__button font-montserrat-normal font-px14">Search</button>
+            <div class="controls__search">
+                <button id="voice" class="controls__mic font-montserrat-normal font-px14">&#x1f3a4;</button>
+                <input id="search-field" class="controls__input font-montserrat-light font-px14" type="text" value="Search city">
+                <button id="search-button" class="controls__button font-montserrat-normal font-px14">Search</button>
             </div>
         </div>
         <div class="weather">
-            <div class="weather-dateinfo">
-                <div class="location font-montserrat-normal font-px44">Minsk, Belarus</div>
-                <div class="data font-montserrat-normal font-px24">Mon 28 October</div>
-                <div class="time font-montserrat-normal font-px24">17:23</div>
+            <div class="weather__dateinfo">
+                <div class="weather__location font-montserrat-normal font-px44">Minsk, Belarus</div>
+                <div class="weather__data font-montserrat-normal font-px24">Mon 28 October</div>
+                <div class="weather__time font-montserrat-normal font-px24">17:23</div>
             </div>
-            <div class="weather-description">
-                <div class="now">
-                    <span id="weather-now" class="now-value time font-montserrat-normal font-px300">10°</span>
-                    <img class="now-icon" src="assets/images/weather-ico/clear-day.png" alt="">
+            <div class="weather__description">
+                <div class="weather__now">
+                    <span class="now-value time font-montserrat-normal font-px300"><span id="weather-now">10°</span></span>
+                    <img class="weather__icon" src="assets/images/weather-ico/clear-day.png" alt="">
                 </div>
-                <div class="sub-description">
-                    <div id="environment-now" class="feels font-montserrat-normal font-px22">Overcast</div>
-                    <div id="feels-now" class="temperature font-montserrat-normal font-px22">feels like: 7°</div>
-                    <div id="wind-now" class="wind font-montserrat-normal font-px22">wind: 2 m/s</div>
-                    <div id="humidity-now" class="humidity font-montserrat-normal font-px22">humidity: 83%</div>
+                <div class="weather__sub-description">
+                    <div class="feels font-montserrat-normal font-px22"><span id="environment-now">Overcast</span></div>
+                    <div class="temperature font-montserrat-normal font-px22">feels like: <span id="feels-now">7</span></div>
+                    <div class="wind font-montserrat-normal font-px22">wind: <span id="wind-now">2</span></div>
+                    <div class="humidity font-montserrat-normal font-px22">humidity: <span id="humidity-now">83</span></div>
                 </div>
             </div>
         </div>
-        <div id="forecast" class="forecast">
-            <div class="weather-tile">
+        <div class="forecast">
+            <div class="forecast__tile weather-tile">
                 <div class="weather-tile__day">Tuesday</div>
                 <div class="weather-tile__average-temp">7°</div>
                 <div class="weather-tile__icon"><img src="assets/images/weather-ico/clear-day.png" alt=""></div>
             </div>
-            <div class="weather-tile">
+            <div class="forecast__tile weather-tile">
                 <div class="weather-tile__day">Tuesday</div>
                 <div class="weather-tile__average-temp">7°</div>
                 <div class="weather-tile__icon"><img src="assets/images/weather-ico/clear-day.png" alt=""></div>
             </div>
-            <div class="weather-tile">
+            <div class="forecast__tile weather-tile">
                 <div class="weather-tile__day">Tuesday</div>
                 <div class="weather-tile__average-temp">7°</div>
                 <div class="weather-tile__icon"><img src="assets/images/weather-ico/clear-day.png" alt=""></div>
             </div>
         </div>
         <div id="location" class="geolocation">
-            <div class="geolocation-map">
+            <div class="geolocation__map">
                 <div id="map" class="map"></div>
             </div>
             <div class="geolocation-info">
@@ -84,7 +84,7 @@
                 <div class="geolocation-info__longitude font-montserrat-normal font-px22">Longitude: 27°34'</div>
             </div>
         </div>
-    </divdiv>
+    </div>
 </body>
 
 </html>

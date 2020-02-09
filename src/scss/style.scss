@@ -1,4 +1,4 @@
-@import 'fonts';
+@import "fonts";
 
 @mixin btn-base {
     padding: 10px;
@@ -80,95 +80,95 @@ body {
     grid-auto-flow: column;
     align-items: center;
 
-    &-buttons {
+    &__buttons {
         display: grid;
         grid-auto-flow: column;
         grid-gap: 10px;
+    }
 
-        .refresh {
-            @include btn-base();
-        }
+    &__refresh {
+        @include btn-base();
+    }
 
-        .language-select {
-            select {
-                appearance: none;
-                @include list-base();
-            }
-        }
-
-        .units {
-            select {
-                appearance: none;
-                @include list-base();
-            }
+    &__language-select {
+        select {
+            appearance: none;
+            @include list-base();
         }
     }
 
-    &-search {
+    &__units {
+        select {
+            appearance: none;
+            @include list-base();
+        }
+    }
+
+    &__search {
         display: flex;
+    }
 
-        &__input {
-            border: 1px solid rgba(228, 227, 227, 0.2);
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            width: 200px;
-        }
+    &__input {
+        border: 1px solid rgba(228, 227, 227, 0.2);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        width: 200px;
+    }
 
-        &__button {
-            @include btn-base();
-            border-top-left-radius: 0px;
-            border-bottom-left-radius: 0px;
-            width: 100px;
-        }
+    &__button {
+        @include btn-base();
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        width: 100px;
+    }
 
-        &__mic {
-            @include btn-base();
-            margin-right: 10px;
-        }
+    &__mic {
+        @include btn-base();
+        margin-right: 10px;
     }
 }
 
 .weather {
     grid-area: weather;
 
-    &-dateinfo {
+    &__dateinfo {
         display: grid;
         grid-template: 1fr 1fr / 1fr 1fr;
+    }
 
-        .location {
-            grid-column: span 2;
+    &__location {
+        grid-column: span 2;
+    }
+
+    &__description {
+        display: grid;
+        grid-template: repeat(6, 1fr) / 2fr 1fr;
+    }
+
+    &__now {
+        grid-row: span 6;
+        position: relative;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 306px;
+        line-height: 373px;
+
+        span {
+            position: relative;
+            z-index: 3;
         }
     }
 
-    &-description {
-        display: grid;
-        grid-template: repeat(6, 1fr) / 2fr 1fr;
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 77%;
+        width: 150px;
+    }
 
-        .now {
-            grid-row: span 6;
-            position: relative;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 306px;
-            line-height: 373px;
-
-            span {
-                position: relative;
-                z-index: 3;
-            }
-
-            &-icon {
-                position: absolute;
-                top: 0;
-                left: 77%;
-                width: 150px;
-            }
-        }
-
-        .sub-description {
-            grid-row: 4 / span 4;
-            grid-column: 2;
-        }
+    &__sub-description {
+        grid-row: 4 / span 4;
+        grid-column: 2;
     }
 }
 
