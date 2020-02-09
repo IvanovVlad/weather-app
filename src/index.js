@@ -5,4 +5,4 @@ import './js/preloader';
 import './js/globals';
 import './js/form';
 import './js/switchLanguage';
-import './js/speechRecognitionApi';
+import './js/API/speechRecognitionApi';
