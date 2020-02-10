@@ -12,7 +12,11 @@ document.querySelector('#search-field').onkeypress = (e) => {
     }
 }
 
-getLocation().then(loc => renderPage(loc));
+getLocation().then(loc => renderPage(loc))
+    .catch(e => {
+        alert('Can not get your location. ' + e);
+        renderPage('Moscow');
+    });
 
 document.querySelector('#refresh').onclick = renderImage;
 
